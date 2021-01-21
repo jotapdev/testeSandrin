@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de IMC</title>
+</head>
+<body>
+    <body>
+        <script>
+            var weightSlider = document.getElementById('sliderWeight')
+  var weightOutput = document.getElementById('weightOutput')
+
+  weightOutput.innerHtml = weightSlider.value;
+
+  weightSlider.oninput = function () {
+  weightOutput.innerHtml = this.value
+            }
+
+  function showValueWeight(newVal){
+  weightSlider.value = newVal
+            }
+
+  weightSlider.addEventListener('input', updateValueOutPutWeight)
+
+  function updateValueOutPutWeight(e){
+  weightOutput.value = e.srcElement.value;
+  }
+
+
+
+        </script>
+    </body>
+    <form name='bmi'>
+        <div class="bmi-calculator">
+          <h4>Calcule seu IMC</h4>
+          <div class='bmi-calculator-weight'>
+            <input
+                id='sliderWeight'
+                class='weight-slider'
+                type="range"
+                min="25"
+                max="180"
+                value="60"
+                />
+            <p>Peso:
+              <input                    
+                id='weightOutput'                      
+                class='inputNumber'
+                type="number"
+                value="60"
+                min="25"
+                max="180"  
+                oninput='showValueWeight(this.value)'
+                />
+              <span>Kg</span>
+            </p>
+            </div>
+                <div class='bmi-calculator-height'>
+                  <input
+                    id='sliderHeight' 
+                    class='height-slider'
+                    type="range"
+                    min="25"
+                    max="230"
+                    value="60"
+                    />
+                  <p>Altura:
+                    <input
+                    id='heightOutput'
+                    class='inputNumber'
+                    type="number"
+                    value="60"
+                    min="25"
+                    max="180"                 
+                    />
+                    <span>cm</span>
+                  </p>
+              </div>
+              <input 
+                    class='Button' 
+                    type='Button' 
+                    value='Calcular'
+                    
+                    />
+        </div>
+      </form>
+     <style>
+         @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+         h4 {
+            color: rgb(95, 15, 15);
+            text-align:center;
+            margin-left: 12px;
+            margin-right: 20px;
+            margin-bottom: 25px;
+            }
+        body {
+            
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(194, 102, 102);
+            display:flex;
+            justify-content: center;
+            align-content: center;
+            font-family: "Roboto", sans-serif;
+        }
+
+        .bmi-calculator{
+            border: 5px solid white;
+            box-shadow: opx 0px 10px;
+            padding: 15px;
+            margin: 20px;
+            height: 500px;
+            background-color: rgb(190, 174, 174);
+        }
+        .bmi-calculator-weight, .bmi-calculator-height{
+        margin-bottom: 16px;  
+        width: 100%;
+        }    
+        .height-slider, .weight-slider{
+            cursor: pointer;
+            width: 100%;
+            height: 1px;
+            border-radius: 10px;
+            outline: none;
+            }
+        
+        .inputNumber{
+            cursor: pointer;
+            height: 20px;
+            width: 45px;
+            margin-left: 20px;
+            margin-right: 20px;
+            text-align: right;
+            font-family: "Roboto", sans-serif;
+            font-size: 18px;
+        }
+        .Button{
+            font-size: 15px;
+            align-content: center;
+            cursor: pointer;
+            color: rgba(156, 0, 0, 0.795);
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 5px;
+            border: 10px;
+            background-color: rgb(112, 106, 106);
+            }               
+            
+    
+</style>     
+</body>
+</html>
